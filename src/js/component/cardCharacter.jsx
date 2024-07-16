@@ -1,7 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-export const CardCharacter = ({ name, gender, eyeColor, hairColor }) => {
-
+export const CardCharacter = ({ id, name, gender, eyeColor, hairColor }) => {
+    // console.log(url[url.length - 2]);
     return (
         <div className="col-4">
             <div className="card" style={{ width: '18rem' }}>
@@ -11,7 +12,10 @@ export const CardCharacter = ({ name, gender, eyeColor, hairColor }) => {
                     <p className="card-text">gender: {gender}</p>
                     <p className="card-text">Eye color: {eyeColor}</p>
                     <p className="card-text">Hair color: {hairColor}</p>
-                    <a href="#" className="btn btn-primary">Go somewhere</a>
+                    <Link className="btn btn-primary" to={"/characterDetails/" + id}>Learn More!</Link>
+                    <button type="button" className="btn btn-primary">
+                        <i className="fa-regular fa-heart"></i>
+                    </button>
                 </div>
             </div>
         </div>

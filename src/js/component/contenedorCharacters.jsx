@@ -8,7 +8,7 @@ export const ContenedorCharacters = () => {
     return (
         <div className="row">
             {store.charactersList.map((item, index) => (
-                <CardCharacter key={index} name={item.name} gender={item.gender} eyeColor={item.eye_color} hairColor={item.hair_color} />
+                <CardCharacter key={index} id={index+1} name={item.name} gender={item.gender} eyeColor={item.eye_color} hairColor={item.hair_color} />
             ))}
         </div>
     );

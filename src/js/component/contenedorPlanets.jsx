@@ -8,7 +8,7 @@ export const ContenedorPlanets = () => {
     return (
         <div className="row">
             {store.planetsList.map((item, index) => (
-                <CardPlanet key={index} name={item.name} population={item.population} terrain={item.terrain} />
+                <CardPlanet key={index} id={index+1} name={item.name} population={item.population} terrain={item.terrain} />
             ))}
         </div>
     );
