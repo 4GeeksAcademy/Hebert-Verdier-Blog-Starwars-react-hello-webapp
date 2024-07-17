@@ -10,11 +10,15 @@ export const PlanetDetails = () => {
     useEffect(() => {
         actions.getDetailsPlanet(id);
     }, [])
-    console.log(store.planet);
     return (
         <div>
             <div className="row">
                 <div className="col-6">
+                    {id == 1 ?
+                        <img src={`https://static.wikia.nocookie.net/esstarwars/images/b/b0/Tatooine_TPM.png`} className="card-img-top" alt="..." />
+                        :
+                        <img src={`https://starwars-visualguide.com/assets/img/planets/${id}.jpg`} className="card-img-top" alt="..." />
+                    }
                     <h2>{store.planet.name}</h2>
                 </div>
             </div>

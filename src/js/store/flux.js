@@ -42,7 +42,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 					setStore({ charactersList: data.results })
 					return true;
 				} catch (error) {
-					console.log(error);
 					return false;
 				}
 			},
@@ -54,10 +53,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 					})
 					let data = await response.json()
 					setStore({ character: data })
-					console.log(data);
 					return true;
 				} catch (error) {
-					console.log(error);
 					return false;
 				}
 			},
@@ -71,7 +68,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 					setStore({ planetsList: data.results })
 					return true;
 				} catch (error) {
-					console.log(error);
 					return false;
 				}
 			},
@@ -83,15 +79,19 @@ const getState = ({ getStore, getActions, setStore }) => {
 					})
 					let data = await response.json()
 					setStore({ planet: data })
-					console.log(data);
 					return true;
 				} catch (error) {
-					console.log(error);
 					return false;
 				}
 			},
-			addFavoritesList: () => {
-				
+			// AÑADIR FAVORITO A LA LISTA
+			addFavoritesList: (name) => {
+				if (getStore().favoritesList.includes(name)) {
+					const newList = getStore().favoritesList.filter((item) => item != name)
+					setStore({ favoritesList: newList })
+				} else {
+					setStore({ favoritesList: [...getStore().favoritesList, name] });
+				}
 			}
 		}
 	};

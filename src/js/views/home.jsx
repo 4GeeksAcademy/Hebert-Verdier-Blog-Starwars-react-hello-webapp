@@ -15,13 +15,13 @@ export const Home = () => {
 	return (
 		<div>
 			<div>
-				<h1>
+				<h1 className="text-center">
 					Characters
 				</h1>
 				<ContenedorCharacters />
 			</div>
 			<div>
-				<h1>
+				<h1 className="text-center">
 					Planets
 				</h1>
 				<ContenedorPlanets />
