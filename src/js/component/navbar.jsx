@@ -7,12 +7,12 @@ export const Navbar = () => {
 	const { store, actions } = useContext(Context);
 
 	return (
-		<nav className="navbar navbar-light bg-light mb-3">
+		<nav className="navbar navbar-light bg-light mb-0 bg-black" >
 			<Link to="/">
-				<span className="navbar-brand mb-0 h1 ms-2">StarWars</span>
+				<img style={{ maxWidth: '100px' }} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTX6MK34zw_YfhT1F26_4dFyF5Rc8v8_ZexPg&s" alt="" />
 			</Link>
 			<div className="nav-item dropdown">
-				<a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+				<a className="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 					Favorites
 				</a>
 				<ul onClick={(e) => e.stopPropagation()} className="dropdown-menu dropdown-menu-end">
@@ -23,4 +23,4 @@ export const Navbar = () => {
 			</div>
 		</nav>
 	);
-};
+}

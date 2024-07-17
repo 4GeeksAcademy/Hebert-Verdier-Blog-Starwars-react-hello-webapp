@@ -13,15 +13,15 @@ export const Home = () => {
 	}, [])
 
 	return (
-		<div>
+		<div className="bg-black">
 			<div>
-				<h1 className="text-center">
+				<h1 className="text-center text-white">
 					Characters
 				</h1>
 				<ContenedorCharacters />
 			</div>
-			<div>
-				<h1 className="text-center">
+			<div className="pt-3">
+				<h1 className="text-center text-white">
 					Planets
 				</h1>
 				<ContenedorPlanets />
