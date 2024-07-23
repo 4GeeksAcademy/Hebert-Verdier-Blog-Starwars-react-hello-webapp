@@ -11,7 +11,6 @@ export const Home = () => {
 		actions.getCharacters();
 		actions.getPlanets();
 	}, [])
-
 	return (
 		<div className="bg-black">
 			<div>

@@ -6,7 +6,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			character: {},
 			planet: {},
 			favoritesList: [],
-			styleButton: { background: 'DarkGreen' }
+			// styleButton: { background: 'DarkGreen' }
 		},
 
 		actions: {
@@ -86,17 +86,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			},
 			// AÑADIR FAVORITO A LA LISTA
-			addFavoritesList: (name, setStyle) => {
+			addFavoritesList: (name) => {
 				if (getStore().favoritesList.includes(name)) {
 					const newList = getStore().favoritesList.filter((item) => item != name)
 					setStore({ favoritesList: newList })
-					setStyle('DarkGreen')
-
 				} else {
 					setStore({ favoritesList: [...getStore().favoritesList, name] });
-					setStyle('DarkRed')
 				}
-			}
+			},
 		}
 	};
 };
