@@ -36,7 +36,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			// OBTENER PERSONAJES
 			getCharacters: async () => {
 				try {
-					let response = await fetch("https://swapi.dev/api/people", {
+					let response = await fetch("https://organic-yodel-q7979775vvqq2xr9q-3000.app.github.dev/characters", {
 						method: 'GET',
 					})
 					let data = await response.json()

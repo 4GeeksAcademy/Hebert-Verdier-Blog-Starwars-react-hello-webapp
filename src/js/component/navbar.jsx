@@ -11,6 +11,7 @@ export const Navbar = () => {
 			<Link to="/">
 				<img style={{ maxWidth: '100px' }} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTX6MK34zw_YfhT1F26_4dFyF5Rc8v8_ZexPg&s" alt="" />
 			</Link>
+			<Link className="btn btn-success" to={"/addCharacter"}>Agregar</Link>
 			<div className="nav-item dropdown">
 				<a className="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 					Favorites
