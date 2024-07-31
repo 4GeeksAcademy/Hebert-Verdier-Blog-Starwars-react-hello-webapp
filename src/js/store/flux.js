@@ -40,7 +40,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						method: 'GET',
 					})
 					let data = await response.json()
-					setStore({ charactersList: data.results })
+					setStore({ charactersList: data })
 					return true;
 				} catch (error) {
 					return false;
@@ -49,14 +49,44 @@ const getState = ({ getStore, getActions, setStore }) => {
 			// DETALLES DE PERSONAJE
 			getDetailsCharacter: async (id) => {
 				try {
-					let response = await fetch(`https://swapi.dev/api/people/${id}`, {
+					let response = await fetch(`https://organic-yodel-q7979775vvqq2xr9q-3000.app.github.dev/character/${id}`, {
 						method: 'GET',
 					})
 					let data = await response.json()
+					console.log(data);
 					setStore({ character: data })
 					return true;
 				} catch (error) {
 					return false;
+				}
+			},
+			// AÑADIR PERSONAJE
+			addCharacter: async (name, birthYear, gender, height, skinColor, eyeColor, image) => {
+				try {
+					let response = await fetch("https://organic-yodel-q7979775vvqq2xr9q-3000.app.github.dev/character", {
+						method: 'POST',
+						headers: {
+							'Content-Type': 'application/json'
+						},
+						body: JSON.stringify({
+							"name": name,
+							"birth_year": birthYear,
+							"gender": gender,
+							"height": height,
+							"skin_color": skinColor,
+							"eye_color": eyeColor,
+							"image": image
+						})
+					})
+					let data = await response.json()
+					if (response.ok) {
+						return true;
+					}
+					return data;
+				}
+				catch (error) {
+					console.log(error);
+					return { 'error': 'unexpected error' };
 				}
 			},
 			// OBTENER PLANETAS

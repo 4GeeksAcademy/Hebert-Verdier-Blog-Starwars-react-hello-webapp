@@ -15,8 +15,7 @@ export const CharacterDetails = () => {
             <div class="card m-0 bg-black" style={{ maxWidth: '1000px' }}>
                 <div class="row g-0">
                     <div class="col-md-4">
-                        <img src={`https://starwars-visualguide.com/assets/img/characters/${id}.jpg`} class="img-fluid rounded-start" alt="..." />
-
+                        <img src={store.character.image} class="img-fluid rounded-start" alt="..." />
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">

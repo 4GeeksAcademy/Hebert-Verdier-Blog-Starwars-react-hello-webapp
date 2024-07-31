@@ -9,7 +9,7 @@ export const ContenedorCharacters = () => {
         <div className="card-group">
             <div className="d-flex flex-row overflow-scroll">
                 {store.charactersList.map((item, index) => (
-                    <CardCharacter key={index} id={index + 1} name={item.name} gender={item.gender} eyeColor={item.eye_color} hairColor={item.hair_color} />
+                    <CardCharacter key={index} id={item.id} name={item.name} gender={item.gender} height={item.height} eyeColor={item.eye_color} skin_color={item.skin_color} image={item.image} />
                 ))}
             </div>
         </div>
