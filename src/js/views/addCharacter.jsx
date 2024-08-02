@@ -4,10 +4,10 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import Swal from 'sweetalert2';
 
-
 export const AddCharacter = () => {
 	const { store, actions } = useContext(Context);
 
+	// FORMIK Y YUP PARA FORMULARIO DE NUEVO PERSONAJE
 	const formik = useFormik({
 		initialValues: {
 			name: '',
@@ -64,29 +64,7 @@ export const AddCharacter = () => {
 			}
 		},
 	});
-	// MANEJADOR DE EVENTO SUBMIT DEL FORMULARIO
-	// const handleSubmit = async (e) => {
-	// 	e.preventDefault();
-	// 	const character = await actions.addCharacter(values.name, values.birthYear, values.gender, values.height, values.skinColor, values.eyeColor, values.image);
-	// 	console.log(character);
-	// 	if (!character.error) {
-	// 		Swal.fire({
-	// 			title: 'Success!',
-	// 			text: "Character successfully created",
-	// 			icon: 'success',
-	// 			timer: 2000
-	// 		})
-	// 		navigate("/")
-	// 	}
-	// 	else {
-	// 		Swal.fire({
-	// 			title: 'Error!',
-	// 			text: character.error,
-	// 			icon: 'error',
-	// 			confirmButtonText: 'OK',
-	// 		})
-	// 	}
-	// }
+	
 	return (
 		<div>
 			<form onSubmit={formik.handleSubmit}>

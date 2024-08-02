@@ -1,0 +1,7 @@
+.card-container{
+    overflow: hidden; 
+}
+.card-container-child{
+    overflow-x: scroll;
+    overflow-y: hidden;
+}

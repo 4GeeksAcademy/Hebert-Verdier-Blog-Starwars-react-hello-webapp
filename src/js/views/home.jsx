@@ -10,6 +10,7 @@ export const Home = () => {
 	useEffect(() => {
 		actions.getCharacters();
 		actions.getPlanets();
+		actions.getFavorites();
 	}, [])
 	return (
 		<div className="bg-black">

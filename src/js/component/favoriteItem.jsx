@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { Context } from "../store/appContext.js";
 
 export const FavoriteItem = ({ name }) => {
@@ -8,7 +8,7 @@ export const FavoriteItem = ({ name }) => {
         <li>
             <a className="dropdown-item d-flex justify-content-between d-flex align-items-center" href="#">
                 {name}
-                <i onClick={() => actions.addFavoritesList(name)} className="fa fa-trash"></i>
+                <i onClick={'() => actions.getFavorites()'} className="fa fa-trash"></i>
             </a>
         </li>
     );

@@ -1,17 +1,19 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext.js";
 
-export const CardCharacter = ({ id, name, gender, eyeColor, skin_color, image}) => {
+export const CardCharacter = ({ id, name, gender, eyeColor, skin_color, image }) => {
     const { store, actions } = useContext(Context);
-
+    const { exist, setExist } = Context('');
     function bookmarkExist(name) {
-        if (store.favoritesList.includes(name)) {
-            return true;
-        } else {
-            return false;
+        setExist(false)
+        for (let favorite in store.favoritesList) {
+            if (store.favoritesList[favorite].name == name) {
+                setExist(true)
+                console.log(true);
+            }
         }
-        //  store.favoritesList.includes(name) ?  true : false;
+        return exist;
     }
     return (
         <div className="card bg-transparent" style={{ width: '18rem', flex: 'none', margin: '10px' }}>
@@ -23,7 +25,7 @@ export const CardCharacter = ({ id, name, gender, eyeColor, skin_color, image}) 
                 <p className="card-text text-white">Skin color: <strong>{skin_color}</strong></p>
                 <div className="d-flex justify-content-between">
                     <Link className="btn btn-primary" to={"/characterDetails/" + id}>Learn More!</Link>
-                    <button type="button" onClick={() => actions.addFavoritesList(name)} className={`btn btn-primary ${bookmarkExist(name) ? "bg-danger" : "bg-success"}`}>
+                    <button type="button" onClick={() => actions.addFavoriteCharacter(1, id)} className={`btn btn-primary ${bookmarkExist(name) ? "bg-danger" : "bg-success"}`}>
                         <i className={"fa fa-heart"}></i>
                     </button>
                 </div>
@@ -31,5 +33,3 @@ export const CardCharacter = ({ id, name, gender, eyeColor, skin_color, image}) 
         </div>
     );
 }
-
-// className={`bookmarkExist(id) ? "text-danger" : "text-white"`}
